@@ -25,6 +25,10 @@ app.get('/', (request, response)=>{
     response.sendFile(__dirname + '/index.html')
 })
 
+app.get('/friends',(request, response)=>{
+    response.json(friends)
+})
+
 app.get("/api/:friendName", (request, response) => {
     const friendName = request.params.friendName
     if(friends[friendName]){
