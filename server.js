@@ -1,6 +1,9 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
 const PORT = 8000;
+
+app.use(cors())
 
 const friends = {
     'agbaj': {
@@ -21,6 +24,7 @@ const friends = {
  
 };
 
+
 app.get('/', (request, response)=>{
     response.sendFile(__dirname + '/index.html')
 })
@@ -37,6 +41,8 @@ app.get("/api/:friendName", (request, response) => {
         response.json(friends['Abdullah'])
     }
 });
+
+
 
 app.listen(process.env.PORT || PORT, () => {
   console.log(`the server is running on ${PORT}`);
