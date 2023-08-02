@@ -34,6 +34,6 @@ app.get("/api/:friendName", (request, response) => {
     }
 });
 
-app.listen(process.env.PORT || PORT, () => {
+app.listen(PORT, () => {
   console.log(`the server is running on ${PORT}`);
 });
